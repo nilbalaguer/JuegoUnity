@@ -28,21 +28,29 @@ public class PlayerMovement : MonoBehaviour
         float y = Input.GetAxis("Vertical");
 
         Vector2 velocidad = new Vector2(x, y) * speed;
-        transform.Translate(velocidad * Time.deltaTime);
+        rb.linearVelocity = velocidad;
+
+        MirarCursor();
     }
 
+    //Se dispara hacia donde mira el jugador
     void Disparar()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 direccion = (mousePos - transform.position).normalized;
+            for (int i = 0; i < 6; i++)
+            {
+                float anguloAleatorio = Random.Range(-10f, 10f);
+                Quaternion rotacionDisparo = Quaternion.Euler(0, 0, anguloAleatorio);
+                Vector2 direccion = rotacionDisparo * transform.right;
 
-            GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
-            Rigidbody2D rbBala = bala.GetComponent<Rigidbody2D>();
-            rbBala.linearVelocity = direccion * fuerzaDisparo;
+                GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
+                Rigidbody2D rbBala = bala.GetComponent<Rigidbody2D>();
+                rbBala.linearVelocity = direccion.normalized * fuerzaDisparo;
+            }
         }
     }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -51,5 +59,16 @@ public class PlayerMovement : MonoBehaviour
             vida -= 1;
             GameObject.Find("Vidas").GetComponent<TextMeshProUGUI>().text = "" + vida;
         }
+    }
+
+    void MirarCursor()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0f;
+
+        Vector3 direccion = mousePos - transform.position;
+        float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0, 0, angulo);
     }
 }
