@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public int vida = 100;
     public TMP_Text TextComponent;
     private Rigidbody2D rb;
-
+    public int municion = 20;
     public GameObject balaPrefab;
     public float fuerzaDisparo = 10f;
     public Transform puntoDisparo;
@@ -38,15 +38,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            for (int i = 0; i < 6; i++)
+            if (municion > 0)
             {
-                float anguloAleatorio = Random.Range(-10f, 10f);
-                Quaternion rotacionDisparo = Quaternion.Euler(0, 0, anguloAleatorio);
-                Vector2 direccion = rotacionDisparo * transform.right;
+                municion --;
 
-                GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
-                Rigidbody2D rbBala = bala.GetComponent<Rigidbody2D>();
-                rbBala.linearVelocity = direccion.normalized * fuerzaDisparo;
+                for (int i = 0; i < 6; i++)
+                {
+                    float anguloAleatorio = Random.Range(-10f, 10f);
+                    Quaternion rotacionDisparo = Quaternion.Euler(0, 0, anguloAleatorio);
+                    Vector2 direccion = rotacionDisparo * transform.right;
+
+                    GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
+                    Rigidbody2D rbBala = bala.GetComponent<Rigidbody2D>();
+                    rbBala.linearVelocity = direccion.normalized * fuerzaDisparo;
+                }
             }
         }
     }

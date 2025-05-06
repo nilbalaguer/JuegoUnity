@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pincho
   - Pared
+  - Municion
   layers:
   - Default
   - TransparentFX
