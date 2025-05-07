@@ -7,6 +7,7 @@ public class EnemigoScript : MonoBehaviour
     public Collider2D colliderAtaque;
     public Collider2D colliderVision;
     public int speed = 4;
+    public int vida = 100;
 
     public float tiempoEntreAtaques = 2f;
     private float proximoAtaque = 0.5f;
@@ -29,8 +30,13 @@ public class EnemigoScript : MonoBehaviour
         {
             if (other.IsTouching(hitEnemigo))
             {
-                Destroy(gameObject); //ce muere
+                vida -= 50; //ce muere
             }
+        }
+
+        if (vida <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

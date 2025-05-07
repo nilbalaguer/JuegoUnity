@@ -45,6 +45,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void OnTriggerStay2D(Collider2D other) {
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (other.CompareTag("Enemigo"))
+            {
+                EnemigoScript enemigo = other.GetComponent<EnemigoScript>();
+                enemigo.vida -= 70;
+            }
+        }
+    }
+
     void MirarCursor()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
