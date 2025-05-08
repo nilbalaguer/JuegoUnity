@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private ArmaScript arma;
 
+    private EnemigoScript enemigoEnRango;
+    private bool enContactoConEnemigo = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         arma.Disparar();
+
+        if (Input.GetButtonDown("Jump") && enContactoConEnemigo && enemigoEnRango != null)
+        {
+            enemigoEnRango.vida -= 70;
+        }
     }
 
     void FixedUpdate()
@@ -37,22 +45,28 @@ public class PlayerMovement : MonoBehaviour
         {
             vida -= 1;
             ActualizarVida();
-
-        } else if (collision.gameObject.CompareTag("Municion"))
+        }
+        else if (collision.gameObject.CompareTag("Municion"))
         {
             arma.municion += 20;
-            
         }
     }
 
-    void OnTriggerStay2D(Collider2D other) {
-        if (Input.GetButtonDown("Jump"))
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemigo"))
         {
-            if (other.CompareTag("Enemigo"))
-            {
-                EnemigoScript enemigo = other.GetComponent<EnemigoScript>();
-                enemigo.vida -= 70;
-            }
+            enemigoEnRango = other.GetComponent<EnemigoScript>();
+            enContactoConEnemigo = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemigo"))
+        {
+            enemigoEnRango = null;
+            enContactoConEnemigo = false;
         }
     }
 
@@ -67,12 +81,14 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angulo);
     }
 
-    public void RecivirDano(int dano) {
+    public void RecivirDano(int dano)
+    {
         vida -= dano;
         ActualizarVida();
     }
 
-    void ActualizarVida() {
+    void ActualizarVida()
+    {
         GameObject.Find("Vidas").GetComponent<TextMeshProUGUI>().text = "" + vida;
     }
 }

@@ -36,7 +36,7 @@ public class ArmaScript : MonoBehaviour
 
                 for (int i = 0; i < 6; i++)
                 {
-                    float anguloAleatorio = Random.Range(-10f, 10f);
+                    float anguloAleatorio = Random.Range(-20f, 20f);
                     Quaternion rotacionDisparo = Quaternion.Euler(0, 0, anguloAleatorio);
                     Vector2 direccion = rotacionDisparo * transform.right;
 

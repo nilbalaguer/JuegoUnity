@@ -112,8 +112,8 @@ public class EnemigoScript : MonoBehaviour
     {
         if (other.CompareTag("Bala") && other.IsTouching(hitEnemigo))
         {
-            vida -= 50;
-            if (vida <= 0)
+            vida -= 40;
+            if (vida < 0)
                 Destroy(gameObject);
         }
     }
