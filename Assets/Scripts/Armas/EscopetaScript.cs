@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class ArmaScript : MonoBehaviour
+public class EscopetaScript : MonoBehaviour
 {
     public UnityEngine.UI.Image barraCooldown;
     public int municion = 20;

@@ -9,6 +9,7 @@ TagManager:
   - Municion
   - Enemigo
   - Bala
+  - ArmaSuelo
   layers:
   - Default
   - TransparentFX

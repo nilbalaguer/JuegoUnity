@@ -7,24 +7,42 @@ public class PlayerMovement : MonoBehaviour
     public int vida = 100;
     public TMP_Text TextComponent;
     private Rigidbody2D rb;
-    private ArmaScript arma;
-
-    private EnemigoScript enemigoEnRango;
-    private bool enContactoConEnemigo = false;
+    private EscopetaScript escopeta;
+    private CuchilloScript cuchillo;
+    public int armaSeleccionada;
+    private ArmaSueloScript armaCercana = null;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        arma = GetComponentInChildren<ArmaScript>();
+        escopeta = GetComponentInChildren<EscopetaScript>();
+        cuchillo = GetComponentInChildren<CuchilloScript>();
+
+        //Arma seleccionada por defecto
+        armaSeleccionada = 0;
+
+        GameObject.Find("ArmaSeleccionada").GetComponent<TextMeshProUGUI>().text = "Arma: " + armaSeleccionada;
     }
 
     void Update()
     {
-        arma.Disparar();
-
-        if (Input.GetButtonDown("Jump") && enContactoConEnemigo && enemigoEnRango != null)
+        switch (armaSeleccionada)
         {
-            enemigoEnRango.vida -= 70;
+            case 1:
+                escopeta.Disparar();
+                break;
+
+            case 0:
+            default:
+                cuchillo.Disparar();
+                break;
+        }
+
+        //cambiar por la arma que esta en el suelo
+        if (armaCercana != null && Input.GetButtonDown("Fire2"))
+        {
+            CambiarArma(armaCercana);
+            armaCercana = null;
         }
     }
 
@@ -48,26 +66,37 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Municion"))
         {
-            arma.municion += 20;
+            escopeta.municion += 20;
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemigo"))
+        if (other.CompareTag("ArmaSuelo"))
         {
-            enemigoEnRango = other.GetComponent<EnemigoScript>();
-            enContactoConEnemigo = true;
+            armaCercana = other.GetComponent<ArmaSueloScript>();
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Enemigo"))
+        if (other.CompareTag("ArmaSuelo"))
         {
-            enemigoEnRango = null;
-            enContactoConEnemigo = false;
+            if (other.GetComponent<ArmaSueloScript>() == armaCercana)
+            {
+                armaCercana = null;
+            }
         }
+    }
+
+    void CambiarArma(ArmaSueloScript armasuelo)
+    {
+        int armaTemp = armaSeleccionada;
+        armaSeleccionada = armasuelo.tipoArma;
+        armasuelo.tipoArma = armaTemp;
+
+        GameObject.Find("ArmaSeleccionada").GetComponent<TextMeshProUGUI>().text = "Arma: " + armaSeleccionada;
+
     }
 
     void MirarCursor()
