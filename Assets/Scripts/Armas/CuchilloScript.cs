@@ -23,7 +23,7 @@ public class CuchilloScript : MonoBehaviour
         {
             enemigo.vida -= 20;
 
-            enemigo.proximoAtaque = Time.time + 2;
+            enemigo.CooldownAtaque = Time.time + 2;
 
             if (enemigo.vida < 0)
             {
