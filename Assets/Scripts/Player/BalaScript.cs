@@ -16,7 +16,7 @@ public class BalaScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Pared") || collision.CompareTag("Enemigo"))
+        if (collision.CompareTag("Pared"))
         {
             Destroy(gameObject);
         }

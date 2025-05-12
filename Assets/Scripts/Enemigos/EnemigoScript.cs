@@ -14,7 +14,7 @@ public class EnemigoScript : MonoBehaviour
     public int speed = 4;
     public int vida = 100;
     public float tiempoEntreAtaques = 2f;
-    private float proximoAtaque = 0.5f;
+    public float proximoAtaque = 0.5f;
 
     [Header("Persecución")]
     [SerializeField] Transform target;
@@ -112,9 +112,11 @@ public class EnemigoScript : MonoBehaviour
     {
         if (other.CompareTag("Bala") && other.IsTouching(hitEnemigo))
         {
-            vida -= 40;
+            vida -= 50;
             if (vida < 0)
                 Destroy(gameObject);
+
+            Destroy(other.gameObject);
         }
     }
 
