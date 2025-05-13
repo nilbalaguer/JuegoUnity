@@ -46,7 +46,7 @@ public class EnemigoEscopetaScript : MonoBehaviour
 
         agent.acceleration = 100f;
 
-        // agent.angularSpeed = 0.1f;
+        agent.angularSpeed = 20f;
     }
 
     void Update()

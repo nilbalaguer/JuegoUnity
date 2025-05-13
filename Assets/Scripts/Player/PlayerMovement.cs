@@ -117,6 +117,8 @@ public class PlayerMovement : MonoBehaviour
 
         GameObject.Find("ArmaSeleccionada").GetComponent<TextMeshProUGUI>().text = "Arma: " + armaSeleccionada;
 
+        armasuelo.ActualizarSprite();
+
         // Activar o desactivar colisión del cuchillo según el arma equipada
         cuchilloColision.enabled = (armaSeleccionada == 0);
     }
