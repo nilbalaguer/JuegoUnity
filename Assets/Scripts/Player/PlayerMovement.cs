@@ -1,16 +1,22 @@
 using UnityEngine;
 using TMPro;
 
+/*
+    AÑADIR PUNTUACION
+*/
+
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 4f;
     public int vida = 100;
-    public TMP_Text TextComponent;
     private Rigidbody2D rb;
     private EscopetaScript escopeta;
     private CuchilloScript cuchillo;
+    [SerializeField] GameObject gameManager;
     public int armaSeleccionada;
     private ArmaSueloScript armaCercana = null;
+
+    [SerializeField] Transform puntoRespawn;
 
     void Start()
     {
@@ -44,6 +50,11 @@ public class PlayerMovement : MonoBehaviour
             CambiarArma(armaCercana);
             armaCercana = null;
         }
+
+        //Menu de pausa
+        if(Input.GetKeyDown("escape")) {
+            gameManager.GetComponent<GameManagerScript>().MenuPausa();
+        }
     }
 
     void FixedUpdate()
@@ -62,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Pincho"))
         {
             vida -= 1;
-            ActualizarVida();
         }
         else if (collision.gameObject.CompareTag("Municion"))
         {
@@ -113,11 +123,18 @@ public class PlayerMovement : MonoBehaviour
     public void RecivirDano(int dano)
     {
         vida -= dano;
-        ActualizarVida();
+
+        if (vida <= 0)
+        {
+            gameManager.GetComponent<GameManagerScript>().JugadorMuerto();
+        }
+
     }
 
-    void ActualizarVida()
-    {
-        GameObject.Find("Vidas").GetComponent<TextMeshProUGUI>().text = "" + vida;
+    public void RespawnPlayer() {
+        //Hace TP al punto de respawn
+        gameObject.transform.position = puntoRespawn.position;
+
+        vida = 100;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,7 +15,8 @@ public class EnemigoScript : MonoBehaviour
     public int speed = 4;
     public int vida = 100;
     public float tiempoEntreAtaques = 2f;
-    public float proximoAtaque = 0.5f;
+    public float CooldownAtaque = 0f;
+    private bool jugadorDentro = false;
 
     [Header("Persecución")]
     [SerializeField] Transform target;
@@ -37,6 +39,12 @@ public class EnemigoScript : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         destinoActual = puntoA;
+
+        agent.speed = speed;
+
+        agent.acceleration = 100f;
+
+        // agent.angularSpeed = 0.1f;
     }
 
     void Update()
@@ -47,16 +55,14 @@ public class EnemigoScript : MonoBehaviour
 
         bool puedeVer = target != null && TieneVisionDirecta() && EstaEnCampoDeVision(dirAlJugador);
 
-        // Si ve al jugador resetea el temporizador y activa persecución
         if (puedeVer)
         {
             persiguiendo = true;
             ultimoVistoTime = Time.time;
         }
-        // Si ya estaba persiguiendo y no ha pasado el tiempo de memoria sigue persiguiendo
         else if (persiguiendo && Time.time - ultimoVistoTime <= tiempoPerdidoMax)
         {
-            puedeVer = true;  
+            puedeVer = true;
         }
         else
         {
@@ -64,7 +70,6 @@ public class EnemigoScript : MonoBehaviour
             puedeVer = false;
         }
 
-        // Decide entre perseguir o patrullar
         if (persiguiendo)
         {
             agent.SetDestination(target.position);
@@ -77,7 +82,6 @@ public class EnemigoScript : MonoBehaviour
                 destinoActual = destinoActual == puntoA ? puntoB : puntoA;
         }
 
-        // Rotar hacia la dirección de movimiento
         Vector2 movimiento = agent.velocity;
         if (movimiento.sqrMagnitude > 0.01f)
         {
@@ -112,23 +116,38 @@ public class EnemigoScript : MonoBehaviour
     {
         if (other.CompareTag("Bala") && other.IsTouching(hitEnemigo))
         {
-            vida -= 50;
-            if (vida < 0)
+            vida -= 100;
+            if (vida <= 0)
                 Destroy(gameObject);
 
             Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("Player") && other.IsTouching(colliderAtaque))
+        {
+            jugadorDentro = true;
+            // Espera 1 segundo antes de permitir el primer ataque
+            CooldownAtaque = Time.time + 0.5f;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            jugadorDentro = false;
         }
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && other.IsTouching(colliderAtaque))
+        if (jugadorDentro && other.CompareTag("Player") && other.IsTouching(colliderAtaque))
         {
-            if (Time.time >= proximoAtaque)
+            if (Time.time >= CooldownAtaque)
             {
                 PlayerMovement player = other.GetComponent<PlayerMovement>();
-                player.RecivirDano(20);
-                proximoAtaque = Time.time + tiempoEntreAtaques;
+                player.RecivirDano(100);
+                CooldownAtaque = Time.time + tiempoEntreAtaques;
             }
         }
     }
