@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemigoScript : MonoBehaviour
+public class EnemigoEscopetaScript : MonoBehaviour
 {
     [Header("Patrulla")]
     [SerializeField] Transform puntoA;
@@ -17,6 +17,8 @@ public class EnemigoScript : MonoBehaviour
     public float tiempoEntreAtaques = 2f;
     public float CooldownAtaque = 0f;
     private bool jugadorDentro = false;
+    [SerializeField] GameObject balaPrefab;
+    [SerializeField] Transform puntoDisparo;
 
     [Header("Persecución")]
     [SerializeField] Transform target;
@@ -72,8 +74,15 @@ public class EnemigoScript : MonoBehaviour
 
         if (persiguiendo)
         {
-            agent.SetDestination(target.position);
-            agent.speed = speed;
+            float distanciaJugador = Vector2.Distance(transform.position, target.position);
+
+            if (distanciaJugador > 4)
+            {
+                agent.SetDestination(target.position);
+                agent.speed = speed;
+            } else {
+                agent.ResetPath();
+            }
         }
         else
         {
@@ -143,12 +152,21 @@ public class EnemigoScript : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (jugadorDentro && other.CompareTag("Player") && other.IsTouching(colliderAtaque))
+        if (jugadorDentro && other.CompareTag("Player") && other.IsTouching(colliderAtaque) && persiguiendo)
         {
             if (Time.time >= CooldownAtaque)
             {
-                PlayerMovement player = other.GetComponent<PlayerMovement>();
-                player.RecivirDano(100);
+                for (int i = 0; i < 6; i++)
+                {
+                    float anguloAleatorio = UnityEngine.Random.Range(-20f, 20f);
+                    Quaternion rotacionDisparo = Quaternion.Euler(0, 0, anguloAleatorio);
+                    Vector2 direccion = rotacionDisparo * transform.right;
+
+                    GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
+                    Rigidbody2D rbBala = bala.GetComponent<Rigidbody2D>();
+                    rbBala.linearVelocity = direccion.normalized * 30; //El ultimo valor es la velocidad del disparo
+                }
+
                 CooldownAtaque = Time.time + tiempoEntreAtaques;
             }
         }
