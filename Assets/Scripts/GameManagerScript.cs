@@ -41,8 +41,14 @@ public class GameManagerScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void Resumen() {
+        menuPausa.SetActive(false);
+        canvaNormal.SetActive(true);
+        Time.timeScale = 1f;
+    }
+
     public void MenuPrincipal() {
         Time.timeScale = 1f;
-        Debug.Log("MainMenu");
+        SceneManager.LoadScene("PantallaInicio");
     }
 }

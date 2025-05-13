@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Net;
 
 /*
     AÑADIR PUNTUACION
@@ -17,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private ArmaSueloScript armaCercana = null;
 
     [SerializeField] Transform puntoRespawn;
+
+    [SerializeField] Collider2D cuchilloColision;
 
     void Start()
     {
@@ -97,6 +100,13 @@ public class PlayerMovement : MonoBehaviour
                 armaCercana = null;
             }
         }
+
+        if (other.CompareTag("Bala"))
+        {
+            RecivirDano(100);
+
+            Destroy(other.gameObject);
+        }
     }
 
     void CambiarArma(ArmaSueloScript armasuelo)
@@ -107,6 +117,8 @@ public class PlayerMovement : MonoBehaviour
 
         GameObject.Find("ArmaSeleccionada").GetComponent<TextMeshProUGUI>().text = "Arma: " + armaSeleccionada;
 
+        // Activar o desactivar colisión del cuchillo según el arma equipada
+        cuchilloColision.enabled = (armaSeleccionada == 0);
     }
 
     void MirarCursor()
