@@ -5,10 +5,14 @@ public class CuchilloScript : MonoBehaviour
 
     private EnemigoScript enemigo = null;
 
+    [SerializeField] AudioClip sonidoCuchillo;
+    [SerializeField] AudioClip sonidoCuchilloMatando;
+    private AudioSource audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,15 +23,23 @@ public class CuchilloScript : MonoBehaviour
 
     public void Disparar()
     {
-        if (Input.GetButtonDown("Fire1") && enemigo != null)
+        if (Input.GetButtonDown("Fire1"))
         {
-            enemigo.vida -= 100;
-
-            enemigo.CooldownAtaque = Time.time + 2;
-
-            if (enemigo.vida < 0)
+            if (enemigo != null)
             {
-                Destroy(enemigo.gameObject);
+                enemigo.vida -= 100;
+
+                enemigo.CooldownAtaque = Time.time + 2;
+
+                audioSource.PlayOneShot(sonidoCuchilloMatando);
+
+                if (enemigo.vida < 0)
+                {
+                    Destroy(enemigo.gameObject);
+                }
+            } else
+            {
+                audioSource.PlayOneShot(sonidoCuchillo);
             }
         }
     }

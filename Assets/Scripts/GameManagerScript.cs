@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,9 +8,15 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] GameObject canvaNormal;
     [SerializeField] GameObject menuPausa;
 
+    [SerializeField] AudioClip wastedSound;
+
+    private AudioSource audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         pantallaMuerte.SetActive(false);
         canvaNormal.SetActive(true);
         menuPausa.SetActive(false);
@@ -34,6 +41,8 @@ public class GameManagerScript : MonoBehaviour
         canvaNormal.SetActive(false);
 
         Time.timeScale = 0f;
+
+        audioSource.PlayOneShot(wastedSound);
     }
 
     public void Reintentar() {

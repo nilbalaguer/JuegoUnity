@@ -12,10 +12,13 @@ public class EscopetaScript : MonoBehaviour
     public float tiempoEntreAtaques = 2f;
     private float proximoAtaque = 0.5f;
 
+    public AudioClip sonido;
+    private AudioSource audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,6 +47,8 @@ public class EscopetaScript : MonoBehaviour
                     Rigidbody2D rbBala = bala.GetComponent<Rigidbody2D>();
                     rbBala.linearVelocity = direccion.normalized * fuerzaDisparo;
                 }
+
+                audioSource.PlayOneShot(sonido);
 
                 proximoAtaque = Time.time + tiempoEntreAtaques;
             }
