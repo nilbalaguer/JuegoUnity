@@ -10,12 +10,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 4f;
     public int vida = 100;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private EscopetaScript escopeta;
     private CuchilloScript cuchillo;
     [SerializeField] GameObject gameManager;
     public int armaSeleccionada;
     private ArmaSueloScript armaCercana = null;
+
+    public int puntosNivel;
 
     [SerializeField] Transform puntoRespawn;
 
@@ -23,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         escopeta = GetComponentInChildren<EscopetaScript>();
         cuchillo = GetComponentInChildren<CuchilloScript>();
 
@@ -31,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
         armaSeleccionada = 0;
 
         GameObject.Find("ArmaSeleccionada").GetComponent<TextMeshProUGUI>().text = "Arma: " + armaSeleccionada;
+
+        //Poner puntos a 0
+        puntosNivel = 0;
     }
 
     void Update()
@@ -116,6 +120,8 @@ public class PlayerMovement : MonoBehaviour
         armasuelo.tipoArma = armaTemp;
 
         GameObject.Find("ArmaSeleccionada").GetComponent<TextMeshProUGUI>().text = "Arma: " + armaSeleccionada;
+
+        armasuelo.ActualizarSprite();
 
         // Activar o desactivar colisión del cuchillo según el arma equipada
         cuchilloColision.enabled = (armaSeleccionada == 0);

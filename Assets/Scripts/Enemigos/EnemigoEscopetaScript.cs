@@ -33,10 +33,15 @@ public class EnemigoEscopetaScript : MonoBehaviour
     private float ultimoVistoTime = Mathf.NegativeInfinity;
     private bool persiguiendo = false;
 
+    [Header("Audio Arma")]
+    [SerializeField] AudioClip sonidoEscopeta;
+    private AudioSource audioSource;
+
     NavMeshAgent agent;
 
     void Start()
     {
+        //IA del enemigo
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -46,7 +51,10 @@ public class EnemigoEscopetaScript : MonoBehaviour
 
         agent.acceleration = 100f;
 
-        // agent.angularSpeed = 0.1f;
+        agent.angularSpeed = 20f;
+
+        //Sonido del enemigo Source
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -166,6 +174,8 @@ public class EnemigoEscopetaScript : MonoBehaviour
                     Rigidbody2D rbBala = bala.GetComponent<Rigidbody2D>();
                     rbBala.linearVelocity = direccion.normalized * 30; //El ultimo valor es la velocidad del disparo
                 }
+
+                audioSource.PlayOneShot(sonidoEscopeta);
 
                 CooldownAtaque = Time.time + tiempoEntreAtaques;
             }
