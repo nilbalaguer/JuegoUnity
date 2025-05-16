@@ -699,6 +699,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmaSueloGameObject (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7321549505816566646, guid: 781afac16057271429058fee07b239ec, type: 3}
+      propertyPath: tipoArma
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
