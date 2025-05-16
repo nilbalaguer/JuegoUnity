@@ -182,6 +182,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Armas_2
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 241
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86627ce8868c9244b9fb232502f476f4
+      internalID: -1864925857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armas_3
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 241
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe41bfcfd7431cc48861ed72a7708df1
+      internalID: -733047796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape:
@@ -204,6 +248,8 @@ TextureImporter:
     nameFileIdTable:
       Armas_0: 1514480949
       Armas_1: 2008191115
+      Armas_2: -1864925857
+      Armas_3: -733047796
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

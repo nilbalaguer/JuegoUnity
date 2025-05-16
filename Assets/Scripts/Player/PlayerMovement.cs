@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     private EscopetaScript escopeta;
     private CuchilloScript cuchillo;
+    private CarbinaM4Script carabinaM4;
+    private PistolaGlockScript pistolaGlock;
     [SerializeField] GameObject gameManager;
     public int armaSeleccionada;
     private ArmaSueloScript armaCercana = null;
@@ -27,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     {
         escopeta = GetComponentInChildren<EscopetaScript>();
         cuchillo = GetComponentInChildren<CuchilloScript>();
+        carabinaM4 = GetComponentInChildren<CarbinaM4Script>();
+        pistolaGlock = GetComponentInChildren<PistolaGlockScript>();
 
         //Arma seleccionada por defecto
         armaSeleccionada = 0;
@@ -43,6 +47,14 @@ public class PlayerMovement : MonoBehaviour
         {
             case 1:
                 escopeta.Disparar();
+                break;
+
+            case 2:
+                carabinaM4.Disparar();
+                break;
+
+            case 3:
+                pistolaGlock.Disparar();
                 break;
 
             case 0:
