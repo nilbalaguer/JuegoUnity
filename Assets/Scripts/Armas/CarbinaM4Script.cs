@@ -1,16 +1,16 @@
 using UnityEngine;
 using TMPro;
 
-public class EscopetaScript : MonoBehaviour
+public class CarbinaM4Script : MonoBehaviour
 {
     public UnityEngine.UI.Image barraCooldown;
-    public int municion = 20;
+    public int municion = 120;
     public GameObject balaPrefab;
     public float fuerzaDisparo = 10f;
     public Transform puntoDisparo;
 
-    public float tiempoEntreAtaques = 2f;
-    private float proximoAtaque = 0.5f;
+    public float tiempoEntreAtaques = 0.3f;
+    private float proximoAtaque = 0.3f;
 
     public AudioClip sonido;
     private AudioSource audioSource;
@@ -30,23 +30,18 @@ public class EscopetaScript : MonoBehaviour
     //Se dispara hacia donde mira el jugador
     public void Disparar()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             if (municion > 0 && Time.time >= proximoAtaque)
             {
                 municion --;
                 GameObject.Find("Municion").GetComponent<TextMeshProUGUI>().text = "" + municion;
 
-                for (int i = 0; i < 6; i++)
-                {
-                    float anguloAleatorio = Random.Range(-20f, 20f);
-                    Quaternion rotacionDisparo = Quaternion.Euler(0, 0, anguloAleatorio);
-                    Vector2 direccion = rotacionDisparo * transform.right;
+                Vector2 direccion = transform.right;
 
-                    GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
-                    Rigidbody2D rbBala = bala.GetComponent<Rigidbody2D>();
-                    rbBala.linearVelocity = direccion.normalized * fuerzaDisparo;
-                }
+                GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
+                Rigidbody2D rbBala = bala.GetComponent<Rigidbody2D>();
+                rbBala.linearVelocity = direccion.normalized * fuerzaDisparo;
 
                 audioSource.PlayOneShot(sonido);
 
