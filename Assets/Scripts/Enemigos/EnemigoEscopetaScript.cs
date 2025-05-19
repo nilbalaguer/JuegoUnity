@@ -4,6 +4,10 @@ using UnityEngine.AI;
 
 public class EnemigoEscopetaScript : MonoBehaviour
 {
+    [Header("Instanciar al morir")]
+    [SerializeField] GameObject sangre;
+    [SerializeField] GameObject armaSuelo;
+
     [Header("Patrulla")]
     [SerializeField] Transform puntoA;
     [SerializeField] Transform puntoB;
@@ -33,10 +37,15 @@ public class EnemigoEscopetaScript : MonoBehaviour
     private float ultimoVistoTime = Mathf.NegativeInfinity;
     private bool persiguiendo = false;
 
+    [Header("Audio Arma")]
+    [SerializeField] AudioClip sonidoEscopeta;
+    private AudioSource audioSource;
+
     NavMeshAgent agent;
 
     void Start()
     {
+        //IA del enemigo
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -46,7 +55,10 @@ public class EnemigoEscopetaScript : MonoBehaviour
 
         agent.acceleration = 100f;
 
-        // agent.angularSpeed = 0.1f;
+        agent.angularSpeed = 20f;
+
+        //Sonido del enemigo Source
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -80,13 +92,15 @@ public class EnemigoEscopetaScript : MonoBehaviour
             {
                 agent.SetDestination(target.position);
                 agent.speed = speed;
-            } else {
+            }
+            else
+            {
                 agent.ResetPath();
             }
         }
         else
         {
-            agent.speed =  speed/2.5f;
+            agent.speed = speed / 2.5f;
             agent.SetDestination(destinoActual.position);
             float distancia = Vector2.Distance(transform.position, destinoActual.position);
             if (distancia < 1.7f)
@@ -127,9 +141,7 @@ public class EnemigoEscopetaScript : MonoBehaviour
     {
         if (other.CompareTag("Bala") && other.IsTouching(hitEnemigo))
         {
-            vida -= 100;
-            if (vida <= 0)
-                Destroy(gameObject);
+            RecivirDano(100);
 
             Destroy(other.gameObject);
         }
@@ -167,6 +179,8 @@ public class EnemigoEscopetaScript : MonoBehaviour
                     rbBala.linearVelocity = direccion.normalized * 30; //El ultimo valor es la velocidad del disparo
                 }
 
+                audioSource.PlayOneShot(sonidoEscopeta);
+
                 CooldownAtaque = Time.time + tiempoEntreAtaques;
             }
         }
@@ -185,5 +199,25 @@ public class EnemigoEscopetaScript : MonoBehaviour
         Vector3 rightDir = Quaternion.Euler(0, 0, campoVision * 0.5f) * transform.right;
         Gizmos.DrawRay(transform.position, leftDir.normalized * visionRange);
         Gizmos.DrawRay(transform.position, rightDir.normalized * visionRange);
+    }
+
+    public void RecivirDano(int reduccion)
+    {
+        vida -= reduccion;
+
+        if (vida <= 0)
+        {
+            Instantiate(sangre, transform.position, Quaternion.identity);
+            
+            GameObject armaGO = Instantiate(armaSuelo, transform.position, Quaternion.identity);
+            ArmaSueloScript armaScript = armaGO.GetComponent<ArmaSueloScript>();
+            
+            if (armaScript != null)
+            {
+                armaScript.tipoArma = 1;
+            }
+
+            Destroy(gameObject);
+        }
     }
 }

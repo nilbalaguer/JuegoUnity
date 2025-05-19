@@ -547,7 +547,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   visionRange: 10
-  campoVision: 60
+  campoVision: 140
   tiempoPerdidoMax: 3
 --- !u!1 &6134733808048698520
 GameObject:
