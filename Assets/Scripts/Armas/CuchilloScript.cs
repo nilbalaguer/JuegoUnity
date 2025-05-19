@@ -21,7 +21,7 @@ public class CuchilloScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && enemigo != null)
         {
-            enemigo.vida -= 20;
+            enemigo.vida -= 100;
 
             enemigo.CooldownAtaque = Time.time + 2;
 
