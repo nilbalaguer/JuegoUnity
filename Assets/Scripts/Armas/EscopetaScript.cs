@@ -49,6 +49,7 @@ public class EscopetaScript : MonoBehaviour
                 }
 
                 audioSource.PlayOneShot(sonido);
+                FindFirstObjectByType<CameraFollow>().Sacudir(0.1f);
 
                 proximoAtaque = Time.time + tiempoEntreAtaques;
             }

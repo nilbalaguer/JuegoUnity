@@ -8,6 +8,6 @@ public class MenuPrincipal : MonoBehaviour
 
     }
     public void Jugar(){
-        SceneManager.LoadScene("Nivel");
+        SceneManager.LoadScene("SampleScene");
     }
 }
