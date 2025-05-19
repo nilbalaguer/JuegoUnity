@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc81126eb551a6a47815f31f24753b75
+guid: c39a7877a753da14db82eb5fcce8ffde
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 760
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Armas_0
+      name: Caja-Municion_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 243
-        width: 30
-        height: 10
+        x: 45
+        y: 0
+        width: 170
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,74 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81c3fcfa6115b73499f18c3263c31abe
-      internalID: 1514480949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Armas_1
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 243
-        width: 43
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a733a0a2817252147b1c2240a9cf6781
-      internalID: 2008191115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Armas_2
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 241
-        width: 34
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86627ce8868c9244b9fb232502f476f4
-      internalID: -1864925857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Armas_3
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 241
-        width: 16
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe41bfcfd7431cc48861ed72a7708df1
-      internalID: -733047796
+      spriteID: fc7db9d7a077b4043b9ec9280d8462c0
+      internalID: -641587874
       vertices: []
       indices: 
       edges: []
@@ -246,10 +180,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Armas_0: 1514480949
-      Armas_1: 2008191115
-      Armas_2: -1864925857
-      Armas_3: -733047796
+      Caja-Municion_0: -641587874
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

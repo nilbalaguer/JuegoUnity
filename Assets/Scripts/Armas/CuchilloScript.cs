@@ -4,6 +4,7 @@ public class CuchilloScript : MonoBehaviour
 {
 
     private EnemigoScript enemigo = null;
+    private EnemigoEscopetaScript enemigoEscopeta = null;
 
     [SerializeField] AudioClip sonidoCuchillo;
     [SerializeField] AudioClip sonidoCuchilloMatando;
@@ -27,17 +28,21 @@ public class CuchilloScript : MonoBehaviour
         {
             if (enemigo != null)
             {
-                enemigo.vida -= 100;
+                enemigo.RecivirDano(100);
 
                 enemigo.CooldownAtaque = Time.time + 2;
 
                 audioSource.PlayOneShot(sonidoCuchilloMatando);
+            }
+            else if (enemigoEscopeta != null)
+            {
+                enemigoEscopeta.RecivirDano(100);
 
-                if (enemigo.vida < 0)
-                {
-                    Destroy(enemigo.gameObject);
-                }
-            } else
+                enemigoEscopeta.CooldownAtaque = Time.time + 2;
+
+                audioSource.PlayOneShot(sonidoCuchilloMatando);
+            }
+            else
             {
                 audioSource.PlayOneShot(sonidoCuchillo);
             }
@@ -49,6 +54,7 @@ public class CuchilloScript : MonoBehaviour
         if (other.CompareTag("Enemigo"))
         {
             enemigo = other.GetComponent<EnemigoScript>();
+            enemigoEscopeta = other.GetComponent<EnemigoEscopetaScript>();
         }
     }
 

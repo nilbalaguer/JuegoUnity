@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
-using System.Net;
+using UnityEngine.UI;
+using Microsoft.Unity.VisualStudio.Editor;
 
 /*
     AÑADIR PUNTUACION
@@ -13,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     private EscopetaScript escopeta;
     private CuchilloScript cuchillo;
+    private CarbinaM4Script carabinaM4;
+    private PistolaGlockScript pistolaGlock;
     [SerializeField] GameObject gameManager;
     public int armaSeleccionada;
     private ArmaSueloScript armaCercana = null;
@@ -23,15 +26,17 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Collider2D cuchilloColision;
 
+    [SerializeField] Sprite[] ArmasEnHud;
+
     void Start()
     {
         escopeta = GetComponentInChildren<EscopetaScript>();
         cuchillo = GetComponentInChildren<CuchilloScript>();
+        carabinaM4 = GetComponentInChildren<CarbinaM4Script>();
+        pistolaGlock = GetComponentInChildren<PistolaGlockScript>();
 
         //Arma seleccionada por defecto
         armaSeleccionada = 0;
-
-        GameObject.Find("ArmaSeleccionada").GetComponent<TextMeshProUGUI>().text = "Arma: " + armaSeleccionada;
 
         //Poner puntos a 0
         puntosNivel = 0;
@@ -43,6 +48,14 @@ public class PlayerMovement : MonoBehaviour
         {
             case 1:
                 escopeta.Disparar();
+                break;
+
+            case 2:
+                carabinaM4.Disparar();
+                break;
+
+            case 3:
+                pistolaGlock.Disparar();
                 break;
 
             case 0:
@@ -81,10 +94,6 @@ public class PlayerMovement : MonoBehaviour
         {
             vida -= 1;
         }
-        else if (collision.gameObject.CompareTag("Municion"))
-        {
-            escopeta.municion += 20;
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -92,6 +101,15 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("ArmaSuelo"))
         {
             armaCercana = other.GetComponent<ArmaSueloScript>();
+
+        }
+        else if (other.CompareTag("Municion"))
+        {
+            escopeta.municion += 10;
+            pistolaGlock.municion += 10;
+            carabinaM4.municion += 15;
+
+            Destroy(other.gameObject);
         }
     }
 
@@ -119,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
         armaSeleccionada = armasuelo.tipoArma;
         armasuelo.tipoArma = armaTemp;
 
-        GameObject.Find("ArmaSeleccionada").GetComponent<TextMeshProUGUI>().text = "Arma: " + armaSeleccionada;
+        GameObject.Find("ArmaSeleccionada").GetComponent<UnityEngine.UI.Image>().sprite = ArmasEnHud[armaSeleccionada];
 
         armasuelo.ActualizarSprite();
 

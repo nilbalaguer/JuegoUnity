@@ -4,6 +4,10 @@ using UnityEngine.AI;
 
 public class EnemigoEscopetaScript : MonoBehaviour
 {
+    [Header("Instanciar al morir")]
+    [SerializeField] GameObject sangre;
+    [SerializeField] GameObject armaSuelo;
+
     [Header("Patrulla")]
     [SerializeField] Transform puntoA;
     [SerializeField] Transform puntoB;
@@ -88,13 +92,15 @@ public class EnemigoEscopetaScript : MonoBehaviour
             {
                 agent.SetDestination(target.position);
                 agent.speed = speed;
-            } else {
+            }
+            else
+            {
                 agent.ResetPath();
             }
         }
         else
         {
-            agent.speed =  speed/2.5f;
+            agent.speed = speed / 2.5f;
             agent.SetDestination(destinoActual.position);
             float distancia = Vector2.Distance(transform.position, destinoActual.position);
             if (distancia < 1.7f)
@@ -135,9 +141,7 @@ public class EnemigoEscopetaScript : MonoBehaviour
     {
         if (other.CompareTag("Bala") && other.IsTouching(hitEnemigo))
         {
-            vida -= 100;
-            if (vida <= 0)
-                Destroy(gameObject);
+            RecivirDano(100);
 
             Destroy(other.gameObject);
         }
@@ -195,5 +199,25 @@ public class EnemigoEscopetaScript : MonoBehaviour
         Vector3 rightDir = Quaternion.Euler(0, 0, campoVision * 0.5f) * transform.right;
         Gizmos.DrawRay(transform.position, leftDir.normalized * visionRange);
         Gizmos.DrawRay(transform.position, rightDir.normalized * visionRange);
+    }
+
+    public void RecivirDano(int reduccion)
+    {
+        vida -= reduccion;
+
+        if (vida <= 0)
+        {
+            Instantiate(sangre, transform.position, Quaternion.identity);
+            
+            GameObject armaGO = Instantiate(armaSuelo, transform.position, Quaternion.identity);
+            ArmaSueloScript armaScript = armaGO.GetComponent<ArmaSueloScript>();
+            
+            if (armaScript != null)
+            {
+                armaScript.tipoArma = 1;
+            }
+
+            Destroy(gameObject);
+        }
     }
 }
