@@ -23,6 +23,11 @@ public class GameManagerScript : MonoBehaviour
         menuPausa.SetActive(false);
 
         GameObject.Find("DisplayPuntos").GetComponent<TextMeshProUGUI>().text = 0 + " pts";
+
+        if (GameController.Instance == null)
+        {
+            SceneManager.LoadScene("PantallaInicio");
+        }
     }
 
     // Update is called once per frame
@@ -45,10 +50,15 @@ public class GameManagerScript : MonoBehaviour
 
         Time.timeScale = 0f;
 
+        GameController.Instance.BorrarPuntuacion();
+
         audioSource.PlayOneShot(wastedSound);
     }
 
-    public void Reintentar() {
+    public void Reintentar()
+    {
+        GameController.Instance.BorrarPuntuacion();
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

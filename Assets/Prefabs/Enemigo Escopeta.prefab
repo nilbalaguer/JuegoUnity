@@ -549,7 +549,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
-  visionRange: 10
+  visionRange: 100
   campoVision: 140
   tiempoPerdidoMax: 3
   sonidoEscopeta: {fileID: 8300000, guid: b3a9da3ec7ba1ad489061e3d267d506a, type: 3}

@@ -62,7 +62,5 @@ public class GameController : MonoBehaviour
     public void BorrarPuntuacion()
     {
         puntuacionJuego = 0;
-
-        GameObject.Find("DisplayPuntos").GetComponent<TextMeshProUGUI>().text = puntuacionJuego + " pts";
     }
 }

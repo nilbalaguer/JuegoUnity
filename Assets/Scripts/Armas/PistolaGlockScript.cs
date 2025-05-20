@@ -3,7 +3,6 @@ using TMPro;
 
 public class PistolaGlockScript : MonoBehaviour
 {
-    public UnityEngine.UI.Image barraCooldown;
     public int municion = 120;
     public GameObject balaPrefab;
     public float fuerzaDisparo = 10f;
@@ -24,7 +23,6 @@ public class PistolaGlockScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ActualizarBarraCooldown();
     }
 
     //Se dispara hacia donde mira el jugador
@@ -50,11 +48,5 @@ public class PistolaGlockScript : MonoBehaviour
                 
             }
         }
-    }
-
-    void ActualizarBarraCooldown()
-    {
-        float progreso = Mathf.Clamp01((Time.time - (proximoAtaque - tiempoEntreAtaques)) / tiempoEntreAtaques);
-        barraCooldown.fillAmount = progreso;
     }
 }
