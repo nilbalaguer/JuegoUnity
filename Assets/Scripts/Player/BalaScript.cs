@@ -1,31 +1,31 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class BalaScript : MonoBehaviour
 {
-    [SerializeField] AudioClip reboteBala;
-    private AudioSource audioSource;
+    private Rigidbody2D rb;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-
+        rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, 3f);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        Vector2 velocity = rb.linearVelocity;
 
+        if (velocity.sqrMagnitude > 0.01f) // Evita rotaciones erráticas con velocidades muy pequeñas
+        {
+            float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Pared"))
         {
-            audioSource.PlayOneShot(reboteBala);
-
             Destroy(gameObject);
         }
     }

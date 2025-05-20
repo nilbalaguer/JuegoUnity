@@ -44,6 +44,7 @@ public class PistolaGlockScript : MonoBehaviour
                 rbBala.linearVelocity = direccion.normalized * fuerzaDisparo;
 
                 audioSource.PlayOneShot(sonido);
+                FindFirstObjectByType<CameraFollow>().Sacudir(0.025f);
 
                 proximoAtaque = Time.time + tiempoEntreAtaques;
             }
