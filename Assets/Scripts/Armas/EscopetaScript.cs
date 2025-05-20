@@ -3,7 +3,6 @@ using TMPro;
 
 public class EscopetaScript : MonoBehaviour
 {
-    public UnityEngine.UI.Image barraCooldown;
     public int municion = 20;
     public GameObject balaPrefab;
     public float fuerzaDisparo = 10f;
@@ -24,7 +23,7 @@ public class EscopetaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ActualizarBarraCooldown();
+        
     }
 
     //Se dispara hacia donde mira el jugador
@@ -34,7 +33,7 @@ public class EscopetaScript : MonoBehaviour
         {
             if (municion > 0 && Time.time >= proximoAtaque)
             {
-                municion --;
+                municion--;
                 GameObject.Find("Municion").GetComponent<TextMeshProUGUI>().text = "" + municion;
 
                 for (int i = 0; i < 6; i++)
@@ -52,13 +51,8 @@ public class EscopetaScript : MonoBehaviour
                 FindFirstObjectByType<CameraFollow>().Sacudir(0.1f);
 
                 proximoAtaque = Time.time + tiempoEntreAtaques;
+                
             }
         }
-    }
-
-    void ActualizarBarraCooldown()
-    {
-        float progreso = Mathf.Clamp01((Time.time - (proximoAtaque - tiempoEntreAtaques)) / tiempoEntreAtaques);
-        barraCooldown.fillAmount = progreso;
     }
 }

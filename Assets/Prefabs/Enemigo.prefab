@@ -107,6 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac79c01a6cd9d849820b0be2ddda1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sangre: {fileID: 3483324481639542212, guid: f685b2fc0af8af24899981dc4b3ce3a1, type: 3}
+  armaSuelo: {fileID: 2989600995350298107, guid: 781afac16057271429058fee07b239ec, type: 3}
   puntoA: {fileID: 0}
   puntoB: {fileID: 0}
   hitEnemigo: {fileID: 8942876744036000713}
@@ -114,12 +116,12 @@ MonoBehaviour:
   speed: 8
   vida: 100
   tiempoEntreAtaques: 0.8
-  CooldownAtaque: 0.8
+  CooldownAtaque: 0.2
   target: {fileID: 0}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
-  visionRange: 10
+  visionRange: 100
   campoVision: 180
   tiempoPerdidoMax: 3
 --- !u!50 &2700556427488901124
@@ -360,7 +362,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -447,7 +449,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

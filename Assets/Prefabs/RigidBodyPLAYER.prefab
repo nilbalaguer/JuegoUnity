@@ -43,7 +43,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1340881697430763897}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
@@ -58,8 +58,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &3729632668861596186
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,6 +70,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3848490963165540591}
   - component: {fileID: 3252262150405667933}
+  - component: {fileID: 5029334849763993040}
+  - component: {fileID: 8685156240917695242}
   - component: {fileID: 4488059282247944717}
   m_Layer: 0
   m_Name: Arma
@@ -87,7 +89,7 @@ Transform:
   m_GameObject: {fileID: 3729632668861596186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.0025333292, w: 0.9999968}
-  m_LocalPosition: {x: 1.21, y: -0.26, z: 0}
+  m_LocalPosition: {x: 1.1, y: 0.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -106,12 +108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62a60d9cef6f804191fe3ff227e4bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barraCooldown: {fileID: 0}
   municion: 20
   balaPrefab: {fileID: 1825422064918711857, guid: 203aa372a170195478c2d59fb26acc76, type: 3}
   fuerzaDisparo: 30
   puntoDisparo: {fileID: 3848490963165540591}
-  tiempoEntreAtaques: 2
+  tiempoEntreAtaques: 1
   sonido: {fileID: 8300000, guid: b3a9da3ec7ba1ad489061e3d267d506a, type: 3}
 --- !u!1 &5624060001153999630
 GameObject:
@@ -237,7 +238,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.17622235, y: 2.3164363}
+  m_Offset: {x: -0.12041828, y: 0.12445545}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -247,7 +248,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.6629596, y: 5.6328726}
+  m_Size: {x: 1.5513515, y: 5.4474573}
   m_EdgeRadius: 0
 --- !u!114 &3466509282104727322
 MonoBehaviour:
@@ -341,7 +342,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -373,6 +374,11 @@ MonoBehaviour:
   puntosNivel: 0
   puntoRespawn: {fileID: 0}
   cuchilloColision: {fileID: 1478763917066817731}
+  ArmasEnHud:
+  - {fileID: 1514480949, guid: dc81126eb551a6a47815f31f24753b75, type: 3}
+  - {fileID: 2008191115, guid: dc81126eb551a6a47815f31f24753b75, type: 3}
+  - {fileID: -1864925857, guid: dc81126eb551a6a47815f31f24753b75, type: 3}
+  - {fileID: -733047796, guid: dc81126eb551a6a47815f31f24753b75, type: 3}
 --- !u!58 &6120532627152015759
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -515,11 +521,52 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8100468813771678837, guid: cf1de71ea1c55ac4f89e76cdfda2d5d5, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5029334849763993040}
+    - targetCorrespondingSourceObject: {fileID: 8100468813771678837, guid: cf1de71ea1c55ac4f89e76cdfda2d5d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8685156240917695242}
+    - targetCorrespondingSourceObject: {fileID: 8100468813771678837, guid: cf1de71ea1c55ac4f89e76cdfda2d5d5, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 4488059282247944717}
     - targetCorrespondingSourceObject: {fileID: 5958942900669744975, guid: cf1de71ea1c55ac4f89e76cdfda2d5d5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6534774363566183924}
   m_SourcePrefab: {fileID: 100100000, guid: cf1de71ea1c55ac4f89e76cdfda2d5d5, type: 3}
+--- !u!114 &5029334849763993040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729632668861596186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625d9ec879dcf2140a5fa439ba1d46b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  municion: 40
+  balaPrefab: {fileID: 1825422064918711857, guid: 203aa372a170195478c2d59fb26acc76, type: 3}
+  fuerzaDisparo: 30
+  puntoDisparo: {fileID: 3848490963165540591}
+  tiempoEntreAtaques: 0.1
+  sonido: {fileID: 8300000, guid: 51433f20177db84439c62494a45a3ccd, type: 3}
+--- !u!114 &8685156240917695242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729632668861596186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4ca30648ec6724396e11d5049b01ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  municion: 20
+  balaPrefab: {fileID: 1825422064918711857, guid: 203aa372a170195478c2d59fb26acc76, type: 3}
+  fuerzaDisparo: 30
+  puntoDisparo: {fileID: 3848490963165540591}
+  sonido: {fileID: 8300000, guid: 6c38daf2ff788414cb580fd86587947e, type: 3}
 --- !u!82 &4488059282247944717
 AudioSource:
   m_ObjectHideFlags: 0

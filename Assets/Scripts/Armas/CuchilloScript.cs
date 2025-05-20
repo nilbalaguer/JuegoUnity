@@ -29,17 +29,13 @@ public class CuchilloScript : MonoBehaviour
             if (enemigo != null)
             {
                 enemigo.RecivirDano(100);
-
-                enemigo.CooldownAtaque = Time.time + 2;
-
+                GameController.Instance.SumarPuntuacion(200);
                 audioSource.PlayOneShot(sonidoCuchilloMatando);
             }
             else if (enemigoEscopeta != null)
             {
                 enemigoEscopeta.RecivirDano(100);
-
-                enemigoEscopeta.CooldownAtaque = Time.time + 2;
-
+                GameController.Instance.SumarPuntuacion(200);
                 audioSource.PlayOneShot(sonidoCuchilloMatando);
             }
             else
