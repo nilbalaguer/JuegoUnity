@@ -44,6 +44,7 @@ public class CarbinaM4Script : MonoBehaviour
                 rbBala.linearVelocity = direccion.normalized * fuerzaDisparo;
 
                 audioSource.PlayOneShot(sonido);
+                FindFirstObjectByType<CameraFollow>().Sacudir(0.035f);
 
                 proximoAtaque = Time.time + tiempoEntreAtaques;
             }
