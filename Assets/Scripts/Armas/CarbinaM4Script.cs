@@ -34,9 +34,9 @@ public class CarbinaM4Script : MonoBehaviour
         {
             if (municion > 0 && Time.time >= proximoAtaque)
             {
-                municion --;
+                municion--;
                 GameObject.Find("Municion").GetComponent<TextMeshProUGUI>().text = "" + municion;
-
+                
                 Vector2 direccion = transform.right;
 
                 GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);

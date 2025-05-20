@@ -108,11 +108,21 @@ public class EnemigoEscopetaScript : MonoBehaviour
         }
 
         Vector2 movimiento = agent.velocity;
+
+        // Si se está moviendo, girar hacia su dirección de movimiento
         if (movimiento.sqrMagnitude > 0.01f)
         {
             float angulo = Mathf.Atan2(movimiento.y, movimiento.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angulo);
         }
+        // Si no se mueve pero está persiguiendo, girar hacia el jugador
+        else if (persiguiendo && target != null)
+        {
+            Vector2 direccionAlJugador = (target.position - transform.position).normalized;
+            float angulo = Mathf.Atan2(direccionAlJugador.y, direccionAlJugador.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angulo);
+        }
+
     }
 
     bool TieneVisionDirecta()
@@ -208,16 +218,18 @@ public class EnemigoEscopetaScript : MonoBehaviour
         if (vida <= 0)
         {
             Instantiate(sangre, transform.position, Quaternion.identity);
-            
+
             GameObject armaGO = Instantiate(armaSuelo, transform.position, Quaternion.identity);
             ArmaSueloScript armaScript = armaGO.GetComponent<ArmaSueloScript>();
-            
+
             if (armaScript != null)
             {
                 armaScript.tipoArma = 1;
             }
 
             Destroy(gameObject);
+            
+            GameController.Instance.SumarPuntuacion(100);
         }
     }
 }

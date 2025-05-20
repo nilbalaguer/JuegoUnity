@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6852280607315647105}
   - component: {fileID: 5083583397535397106}
+  - component: {fileID: 207715825548079881}
   m_Layer: 0
   m_Name: Sangre
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.42, y: 3.33, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,3 +88,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &207715825548079881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3483324481639542212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a1f49636562e2438eca53fc3627934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpritesSangre:
+  - {fileID: 8966617367631470690, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
+  - {fileID: 6936557753285981393, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
+  - {fileID: 1050020262470590731, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
+  - {fileID: -8913016756226060312, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
+  - {fileID: -6037677846832771481, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
+  - {fileID: -8866122932861206053, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
+  - {fileID: -8459661986351095679, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
+  - {fileID: -9000185811805369830, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
+  - {fileID: 3244976957621322427, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
+  - {fileID: -5959819552344423600, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
+  - {fileID: -3371348063264094036, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
+  sangrePrefab: {fileID: 3483324481639542212}
+  probabilidadSpawn: 29
+  totalProbabilidad: 30
+  rangoAleatorio: 0.15

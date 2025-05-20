@@ -34,7 +34,7 @@ public class PistolaGlockScript : MonoBehaviour
         {
             if (municion > 0 && Time.time >= proximoAtaque)
             {
-                municion --;
+                municion--;
                 GameObject.Find("Municion").GetComponent<TextMeshProUGUI>().text = "" + municion;
 
                 Vector2 direccion = transform.right;
@@ -47,6 +47,7 @@ public class PistolaGlockScript : MonoBehaviour
                 FindFirstObjectByType<CameraFollow>().Sacudir(0.025f);
 
                 proximoAtaque = Time.time + tiempoEntreAtaques;
+                
             }
         }
     }

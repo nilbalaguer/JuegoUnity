@@ -34,7 +34,7 @@ public class EscopetaScript : MonoBehaviour
         {
             if (municion > 0 && Time.time >= proximoAtaque)
             {
-                municion --;
+                municion--;
                 GameObject.Find("Municion").GetComponent<TextMeshProUGUI>().text = "" + municion;
 
                 for (int i = 0; i < 6; i++)
@@ -52,6 +52,7 @@ public class EscopetaScript : MonoBehaviour
                 FindFirstObjectByType<CameraFollow>().Sacudir(0.1f);
 
                 proximoAtaque = Time.time + tiempoEntreAtaques;
+                
             }
         }
     }

@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +21,8 @@ public class GameManagerScript : MonoBehaviour
         pantallaMuerte.SetActive(false);
         canvaNormal.SetActive(true);
         menuPausa.SetActive(false);
+
+        GameObject.Find("DisplayPuntos").GetComponent<TextMeshProUGUI>().text = 0 + " pts";
     }
 
     // Update is called once per frame
