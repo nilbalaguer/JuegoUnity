@@ -116,12 +116,12 @@ MonoBehaviour:
   speed: 8
   vida: 100
   tiempoEntreAtaques: 0.8
-  CooldownAtaque: 0.8
+  CooldownAtaque: 0.2
   target: {fileID: 0}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
-  visionRange: 10
+  visionRange: 100
   campoVision: 180
   tiempoPerdidoMax: 3
 --- !u!50 &2700556427488901124

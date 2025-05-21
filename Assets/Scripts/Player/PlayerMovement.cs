@@ -44,24 +44,27 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        switch (armaSeleccionada)
+        if (Time.timeScale > 0)
         {
-            case 1:
-                escopeta.Disparar();
-                break;
+            switch (armaSeleccionada)
+            {
+                case 1:
+                    escopeta.Disparar();
+                    break;
 
-            case 2:
-                carabinaM4.Disparar();
-                break;
+                case 2:
+                    carabinaM4.Disparar();
+                    break;
 
-            case 3:
-                pistolaGlock.Disparar();
-                break;
+                case 3:
+                    pistolaGlock.Disparar();
+                    break;
 
-            case 0:
-            default:
-                cuchillo.Disparar();
-                break;
+                case 0:
+                default:
+                    cuchillo.Disparar();
+                    break;
+            }
         }
 
         //cambiar por la arma que esta en el suelo

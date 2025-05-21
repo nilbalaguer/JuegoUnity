@@ -179,16 +179,18 @@ public class EnemigoScript : MonoBehaviour
         {
             Instantiate(sangre, transform.position, Quaternion.identity);
 
-            
+
             GameObject armaGO = Instantiate(armaSuelo, transform.position, Quaternion.identity);
             ArmaSueloScript armaScript = armaGO.GetComponent<ArmaSueloScript>();
-            
+
             if (armaScript != null)
             {
                 armaScript.tipoArma = 0;
             }
 
             Destroy(gameObject);
+            
+            GameController.Instance.SumarPuntuacion(40);
         }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3483324481639542212
+--- !u!1 &4194939757306863245
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6852280607315647105}
-  - component: {fileID: 5083583397535397106}
-  - component: {fileID: 207715825548079881}
+  - component: {fileID: 873264452807494640}
+  - component: {fileID: 2413014788791760574}
+  - component: {fileID: 1475100372730043405}
+  - component: {fileID: 8873276694138169464}
   m_Layer: 0
-  m_Name: Sangre
+  m_Name: Walkable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6852280607315647105
+--- !u!4 &873264452807494640
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3483324481639542212}
+  m_GameObject: {fileID: 4194939757306863245}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42, y: 3.33, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 1}
+  m_LocalPosition: {x: -0.6542, y: 2.0249, z: 0}
+  m_LocalScale: {x: 29.06887, y: 23.409843, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5083583397535397106
+--- !u!212 &2413014788791760574
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3483324481639542212}
+  m_GameObject: {fileID: 4194939757306863245}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.39215687, g: 0.27716494, b: 0.26981127, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -88,31 +89,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &207715825548079881
+--- !u!114 &1475100372730043405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3483324481639542212}
+  m_GameObject: {fileID: 4194939757306863245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20a1f49636562e2438eca53fc3627934, type: 3}
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpritesSangre:
-  - {fileID: 8966617367631470690, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
-  - {fileID: 6936557753285981393, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
-  - {fileID: 1050020262470590731, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
-  - {fileID: -8913016756226060312, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
-  - {fileID: -6037677846832771481, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
-  - {fileID: -8866122932861206053, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
-  - {fileID: -8459661986351095679, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
-  - {fileID: -9000185811805369830, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
-  - {fileID: 3244976957621322427, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
-  - {fileID: -5959819552344423600, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
-  - {fileID: -3371348063264094036, guid: ac0b53c2ad7be52418cd1fdb168b585c, type: 3}
-  sangrePrefab: {fileID: 3483324481639542212}
-  probabilidadSpawn: 29
-  totalProbabilidad: 30
-  rangoAleatorio: 0.15
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!95 &8873276694138169464
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194939757306863245}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 92fba8e026982f544a65988a3f4b169c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

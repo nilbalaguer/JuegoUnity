@@ -541,7 +541,7 @@ MonoBehaviour:
   colliderAtaque: {fileID: 539168407271103168}
   speed: 6
   vida: 100
-  tiempoEntreAtaques: 3
+  tiempoEntreAtaques: 1
   CooldownAtaque: 0
   balaPrefab: {fileID: 1825422064918711857, guid: 203aa372a170195478c2d59fb26acc76, type: 3}
   puntoDisparo: {fileID: 8973684181881794867}
@@ -549,7 +549,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
-  visionRange: 10
+  visionRange: 100
   campoVision: 140
   tiempoPerdidoMax: 3
   sonidoEscopeta: {fileID: 8300000, guid: b3a9da3ec7ba1ad489061e3d267d506a, type: 3}
