@@ -39,7 +39,17 @@ public class GameController : MonoBehaviour
 
             if (cantidadEnemigos <= 0)
             {
-                Debug.Log("Cambiar de escena");
+                Debug.Log("Nivel completado");
+
+                GameManagerScript gm = FindFirstObjectByType<GameManagerScript>();
+                if (gm != null)
+                {
+                    gm.MostrarLevelClearedMessage();
+                }
+                else
+                {
+                    Debug.LogWarning("No se encontró GameManagerScript.");
+                }
             }
         }
     }

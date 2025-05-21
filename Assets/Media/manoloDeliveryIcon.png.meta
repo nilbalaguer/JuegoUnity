@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      manoloDeliveryIcon_0: 3111245115176735052
+      manoloDeliveryIcon_1: 2541997912587696000
+      manoloDeliveryIcon_2: -4006836395532641516
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
