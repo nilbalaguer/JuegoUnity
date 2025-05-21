@@ -34,7 +34,7 @@ public class CarbinaM4Script : MonoBehaviour
             {
                 municion--;
                 GameObject.Find("Municion").GetComponent<TextMeshProUGUI>().text = "" + municion;
-                
+
                 Vector2 direccion = transform.right;
 
                 GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
@@ -47,5 +47,10 @@ public class CarbinaM4Script : MonoBehaviour
                 proximoAtaque = Time.time + tiempoEntreAtaques;
             }
         }
+    }
+
+    public void ActualizarMunicion()
+    {
+        GameObject.Find("Municion").GetComponent<TextMeshProUGUI>().text = "" + municion;
     }
 }

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class CuchilloScript : MonoBehaviour
@@ -19,7 +20,7 @@ public class CuchilloScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Disparar()
@@ -60,5 +61,10 @@ public class CuchilloScript : MonoBehaviour
         {
             enemigo = null;
         }
+    }
+    
+    public void ActualizarMunicion()
+    {
+        GameObject.Find("Municion").GetComponent<TextMeshProUGUI>().text = "/";
     }
 }

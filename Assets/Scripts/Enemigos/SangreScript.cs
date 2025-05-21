@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SangreScript : MonoBehaviour
@@ -18,18 +19,26 @@ public class SangreScript : MonoBehaviour
 
         // Probabilidad de spawn
         int dado = Random.Range(1, totalProbabilidad + 1); // [1, 30]
+
         if (dado <= probabilidadSpawn)
         {
-            // posición aleatoria
-            Vector2 offset = new Vector2(
-                Random.Range(-rangoAleatorio, rangoAleatorio),
-                Random.Range(-rangoAleatorio, rangoAleatorio)
-            );
-            Vector3 nuevaPosicion = transform.position + (Vector3)offset;
-
-            Quaternion rotacionAleatoria = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
-            GameObject nuevaSangre = Instantiate(sangrePrefab, nuevaPosicion, rotacionAleatoria);
-
+            StartCoroutine(SpawnSangreConRetraso(0.06f)); // Ajusta el tiempo si quieres
         }
+
     }
+
+    private IEnumerator SpawnSangreConRetraso(float retraso)
+    {
+        yield return new WaitForSeconds(retraso);
+
+        Vector2 offset = new Vector2(
+            Random.Range(-rangoAleatorio, rangoAleatorio),
+            Random.Range(-rangoAleatorio, rangoAleatorio)
+        );
+        Vector3 nuevaPosicion = transform.position + (Vector3)offset;
+
+        Quaternion rotacionAleatoria = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
+        Instantiate(sangrePrefab, nuevaPosicion, rotacionAleatoria);
+    }
+
 }

@@ -146,6 +146,26 @@ public class PlayerMovement : MonoBehaviour
 
         // Activar o desactivar colisión del cuchillo según el arma equipada
         cuchilloColision.enabled = (armaSeleccionada == 0);
+
+        switch (armaSeleccionada)
+        {
+            case 1:
+                escopeta.ActualizarMunicion();
+                break;
+
+            case 2:
+                carabinaM4.ActualizarMunicion();
+                break;
+
+            case 3:
+                pistolaGlock.ActualizarMunicion();
+                break;
+
+            default:
+            case 0:
+                cuchillo.ActualizarMunicion();
+                break;
+        }
     }
 
     void MirarCursor()

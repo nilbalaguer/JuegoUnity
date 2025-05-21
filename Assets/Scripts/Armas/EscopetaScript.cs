@@ -23,7 +23,7 @@ public class EscopetaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //Se dispara hacia donde mira el jugador
@@ -51,8 +51,13 @@ public class EscopetaScript : MonoBehaviour
                 FindFirstObjectByType<CameraFollow>().Sacudir(0.1f);
 
                 proximoAtaque = Time.time + tiempoEntreAtaques;
-                
+
             }
         }
+    }
+    
+    public void ActualizarMunicion()
+    {
+        GameObject.Find("Municion").GetComponent<TextMeshProUGUI>().text = "" + municion;
     }
 }
