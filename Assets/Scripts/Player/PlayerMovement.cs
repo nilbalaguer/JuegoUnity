@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using Microsoft.Unity.VisualStudio.Editor;
 
 /*
     AÑADIR PUNTUACION

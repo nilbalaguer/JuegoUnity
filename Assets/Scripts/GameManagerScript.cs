@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,12 +7,12 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] GameObject pantallaMuerte;
     [SerializeField] GameObject canvaNormal;
     [SerializeField] GameObject menuPausa;
+    [SerializeField] GameObject levelClearedMessage;
 
     [SerializeField] AudioClip wastedSound;
 
     private AudioSource audioSource;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -28,15 +27,15 @@ public class GameManagerScript : MonoBehaviour
         {
             SceneManager.LoadScene("PantallaInicio");
         }
+
+        if (levelClearedMessage != null)
+        {
+            levelClearedMessage.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MenuPausa()
     {
-        
-    }
-
-    public void MenuPausa() {
         Debug.Log("Menu de pausa");
         canvaNormal.SetActive(false);
         menuPausa.SetActive(true);
@@ -44,7 +43,8 @@ public class GameManagerScript : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void JugadorMuerto() {
+    public void JugadorMuerto()
+    {
         pantallaMuerte.SetActive(true);
         canvaNormal.SetActive(false);
 
@@ -63,14 +63,28 @@ public class GameManagerScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void Resumen() {
+    public void Resumen()
+    {
         menuPausa.SetActive(false);
         canvaNormal.SetActive(true);
         Time.timeScale = 1f;
     }
 
-    public void MenuPrincipal() {
+    public void MenuPrincipal()
+    {
         Time.timeScale = 1f;
         SceneManager.LoadScene("PantallaInicio");
+    }
+
+    public void MostrarLevelClearedMessage()
+    {
+        if (levelClearedMessage != null)
+        {
+            levelClearedMessage.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("LevelClearedMessage no está asignado en el Inspector.");
+        }
     }
 }
