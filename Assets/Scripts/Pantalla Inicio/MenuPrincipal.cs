@@ -11,7 +11,9 @@ public class MenuPrincipal : MonoBehaviour
         Application.Quit();
     }
     public void Jugar(){
-        SceneManager.LoadScene("NIVELANIOL");
+        SceneManager.LoadScene("NIVELANIOL_prueba");
+        //SceneManager.LoadScene("NIVELANIOL");
+        //SceneManager.LoadScene("Nivel1_Nil");
     }
     public void Controles(){
         Debug.Log("Controles");
