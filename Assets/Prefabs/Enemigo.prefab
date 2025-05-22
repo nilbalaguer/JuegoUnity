@@ -121,9 +121,9 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 8
-  visionRange: 100
+  visionRange: 30
   campoVision: 180
-  tiempoPerdidoMax: 3
+  tiempoPerdidoMax: 6
 --- !u!50 &2700556427488901124
 Rigidbody2D:
   serializedVersion: 5

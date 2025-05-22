@@ -45,8 +45,13 @@ public class PistolaGlockScript : MonoBehaviour
                 FindFirstObjectByType<CameraFollow>().Sacudir(0.025f);
 
                 proximoAtaque = Time.time + tiempoEntreAtaques;
-                
+
             }
         }
+    }
+    
+    public void ActualizarMunicion()
+    {
+        GameObject.Find("Municion").GetComponent<TextMeshProUGUI>().text = "" + municion;
     }
 }
