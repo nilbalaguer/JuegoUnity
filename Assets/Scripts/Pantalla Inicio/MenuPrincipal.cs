@@ -11,7 +11,7 @@ public class MenuPrincipal : MonoBehaviour
         Application.Quit();
     }
     public void Jugar(){
-        SceneManager.LoadScene("Nivel1_Nil");
+        SceneManager.LoadScene("NIVELANIOL");
     }
     public void Controles(){
         Debug.Log("Controles");
