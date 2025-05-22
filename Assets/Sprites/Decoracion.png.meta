@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: 0476e2948d2b5a04c822b8a97a9bbee5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 220148412879823992
+    second: HardNews_0
+  - first:
+      213: 7647017674102013222
+    second: HardNews_1
+  - first:
+      213: -4438568641398441004
+    second: HardNews_2
+  - first:
+      213: 7184325989896166949
+    second: HardNews_3
+  - first:
+      213: -1884404093483241909
+    second: HardNews_4
+  - first:
+      213: -1572867935939213648
+    second: HardNews_5
+  - first:
+      213: -8862761875260872544
+    second: HardNews_6
+  - first:
+      213: -8238264151743744486
+    second: HardNews_7
+  - first:
+      213: 5230712706469347877
+    second: HardNews_8
+  - first:
+      213: -6589173850089816333
+    second: HardNews_9
+  - first:
+      213: -703513328549607412
+    second: HardNews_10
+  - first:
+      213: -2727265979162375407
+    second: HardNews_11
+  - first:
+      213: 8957105592479593489
+    second: HardNews_12
+  - first:
+      213: 3255325631674974584
+    second: HardNews_13
+  - first:
+      213: -98211221350806436
+    second: HardNews_14
+  - first:
+      213: -1633788555395585304
+    second: HardNews_15
+  - first:
+      213: 1058049473662581643
+    second: HardNews_16
+  - first:
+      213: -911113307667889477
+    second: HardNews_17
+  - first:
+      213: 5278762872542860112
+    second: HardNews_18
+  - first:
+      213: 1363131818175068414
+    second: HardNews_19
+  - first:
+      213: -4810759774476967863
+    second: HardNews_20
+  - first:
+      213: -4531057920208102152
+    second: HardNews_21
+  - first:
+      213: -5094965292722647594
+    second: HardNews_22
+  - first:
+      213: -6296221151392260884
+    second: HardNews_23
+  - first:
+      213: -4782110656498147073
+    second: HardNews_24
+  - first:
+      213: 3131773141422958488
+    second: HardNews_25
+  - first:
+      213: 2386410418080781314
+    second: HardNews_26
+  - first:
+      213: -1944427696524702589
+    second: HardNews_27
+  - first:
+      213: -5084043818284833566
+    second: HardNews_28
+  - first:
+      213: -3341190919680687734
+    second: HardNews_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HardNews_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 738
+        width: 47
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 874619ba0df1e0300800000000000000
+      internalID: 220148412879823992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 839
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62dfbf71f0aaf1a60800000000000000
+      internalID: 7647017674102013222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_2
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 847
+        width: 57
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dbf14256590762c0800000000000000
+      internalID: -4438568641398441004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_3
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 845
+        width: 83
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e1e527c6ad3b360800000000000000
+      internalID: 7184325989896166949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_4
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 807
+        width: 41
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4ea3a2067049d5e0800000000000000
+      internalID: -1884404093483241909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_5
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 719
+        width: 88
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6cdb712fc0c2ae0800000000000000
+      internalID: -1572867935939213648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_6
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 741
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a863380805210580800000000000000
+      internalID: -8862761875260872544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_7
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 736
+        width: 57
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a16ba75f66ecbad80800000000000000
+      internalID: -8238264151743744486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_8
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 740
+        width: 83
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5224a373e79379840800000000000000
+      internalID: 5230712706469347877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_9
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 623
+        width: 83
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe7a165b4d8e84a0800000000000000
+      internalID: -6589173850089816333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_10
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 665
+        width: 43
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c084c05ea5e9c36f0800000000000000
+      internalID: -703513328549607412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_11
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 615
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11bc408aa0ec62ad0800000000000000
+      internalID: -2727265979162375407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_12
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 636
+        width: 38
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 114396f54180e4c70800000000000000
+      internalID: 8957105592479593489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_13
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 592
+        width: 57
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87106302a6d3d2d20800000000000000
+      internalID: 3255325631674974584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_14
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 535
+        width: 98
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c8d6e1a6513aef0800000000000000
+      internalID: -98211221350806436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_15
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 417
+        width: 23
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea2c8d07fd9359e0800000000000000
+      internalID: -1633788555395585304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_16
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 494
+        width: 57
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8b7278f362feae00800000000000000
+      internalID: 1058049473662581643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_17
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 475
+        width: 57
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb2035226431b53f0800000000000000
+      internalID: -911113307667889477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_18
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 471
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 053107f4ddee14940800000000000000
+      internalID: 5278762872542860112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_19
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 398
+        width: 57
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef87b5c9a21dae210800000000000000
+      internalID: 1363131818175068414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_20
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 319
+        width: 21
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940ef8e397fbc3db0800000000000000
+      internalID: -4810759774476967863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_21
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 339
+        width: 55
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc964104d27e11c0800000000000000
+      internalID: -4531057920208102152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_22
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 271
+        width: 57
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd82508f0c0b49b0800000000000000
+      internalID: -5094965292722647594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_23
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 238
+        width: 57
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec96fbb8345f98a0800000000000000
+      internalID: -6296221151392260884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_24
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 248
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff061d2d1b782adb0800000000000000
+      internalID: -4782110656498147073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_25
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 186
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 897ef9b441b467b20800000000000000
+      internalID: 3131773141422958488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_26
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 173
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2041ff9a1ab3e1120800000000000000
+      internalID: 2386410418080781314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_27
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 142
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38cc631ef410405e0800000000000000
+      internalID: -1944427696524702589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_28
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 87
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e4ac9c6519d179b0800000000000000
+      internalID: -5084043818284833566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HardNews_29
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 67
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a810ca99f84b1a1d0800000000000000
+      internalID: -3341190919680687734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      HardNews_0: 220148412879823992
+      HardNews_1: 7647017674102013222
+      HardNews_10: -703513328549607412
+      HardNews_11: -2727265979162375407
+      HardNews_12: 8957105592479593489
+      HardNews_13: 3255325631674974584
+      HardNews_14: -98211221350806436
+      HardNews_15: -1633788555395585304
+      HardNews_16: 1058049473662581643
+      HardNews_17: -911113307667889477
+      HardNews_18: 5278762872542860112
+      HardNews_19: 1363131818175068414
+      HardNews_2: -4438568641398441004
+      HardNews_20: -4810759774476967863
+      HardNews_21: -4531057920208102152
+      HardNews_22: -5094965292722647594
+      HardNews_23: -6296221151392260884
+      HardNews_24: -4782110656498147073
+      HardNews_25: 3131773141422958488
+      HardNews_26: 2386410418080781314
+      HardNews_27: -1944427696524702589
+      HardNews_28: -5084043818284833566
+      HardNews_29: -3341190919680687734
+      HardNews_3: 7184325989896166949
+      HardNews_4: -1884404093483241909
+      HardNews_5: -1572867935939213648
+      HardNews_6: -8862761875260872544
+      HardNews_7: -8238264151743744486
+      HardNews_8: 5230712706469347877
+      HardNews_9: -6589173850089816333
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
