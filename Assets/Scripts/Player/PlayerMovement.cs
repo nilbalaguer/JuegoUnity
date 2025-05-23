@@ -2,10 +2,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-/*
-    AÑADIR PUNTUACION
-*/
-
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 4f;
@@ -18,13 +14,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject gameManager;
     public int armaSeleccionada;
     private ArmaSueloScript armaCercana = null;
-
+    public Animator animator;
     public int puntosNivel;
 
     [SerializeField] Transform puntoRespawn;
-
     [SerializeField] Collider2D cuchilloColision;
-
     [SerializeField] Sprite[] ArmasEnHud;
 
     void Start()
@@ -34,10 +28,10 @@ public class PlayerMovement : MonoBehaviour
         carabinaM4 = GetComponentInChildren<CarbinaM4Script>();
         pistolaGlock = GetComponentInChildren<PistolaGlockScript>();
 
-        //Arma seleccionada por defecto
-        armaSeleccionada = 0;
+        // ⚠️ Obtener Animator desde el objeto hijo "Legs"
+        animator = transform.Find("Legs").GetComponent<Animator>();
 
-        //Poner puntos a 0
+        armaSeleccionada = 0;
         puntosNivel = 0;
 
         int armaController = GameController.Instance.armaSeleccionada;
@@ -58,31 +52,31 @@ public class PlayerMovement : MonoBehaviour
                 case 1:
                     escopeta.Disparar();
                     break;
-
                 case 2:
                     carabinaM4.Disparar();
                     break;
-
                 case 3:
                     pistolaGlock.Disparar();
                     break;
-
                 case 0:
                 default:
                     cuchillo.Disparar();
                     break;
             }
         }
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
 
-        //cambiar por la arma que esta en el suelo
+        bool estaMoviendose = (x != 0 || y != 0);
+        animator.SetBool("isMoving", estaMoviendose);
+
         if (armaCercana != null && Input.GetButtonDown("Fire2"))
         {
             CambiarArma(armaCercana);
             armaCercana = null;
         }
 
-        //Menu de pausa
-        if(Input.GetKeyDown("escape")) {
+        if (Input.GetKeyDown("escape")) {
             gameManager.GetComponent<GameManagerScript>().MenuPausa();
         }
     }
@@ -111,7 +105,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("ArmaSuelo"))
         {
             armaCercana = other.GetComponent<ArmaSueloScript>();
-
         }
         else if (other.CompareTag("Municion"))
         {
@@ -136,7 +129,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Bala"))
         {
             RecivirDano(100);
-
             Destroy(other.gameObject);
         }
     }
@@ -150,10 +142,8 @@ public class PlayerMovement : MonoBehaviour
         GameObject.Find("ArmaSeleccionada").GetComponent<UnityEngine.UI.Image>().sprite = ArmasEnHud[armaSeleccionada];
 
         armasuelo.ActualizarSprite();
-
         GameController.Instance.armaSeleccionada = armaSeleccionada;
 
-        // Activar o desactivar colisión del cuchillo según el arma equipada
         cuchilloColision.enabled = (armaSeleccionada == 0);
 
         switch (armaSeleccionada)
@@ -161,17 +151,14 @@ public class PlayerMovement : MonoBehaviour
             case 1:
                 escopeta.ActualizarMunicion();
                 break;
-
             case 2:
                 carabinaM4.ActualizarMunicion();
                 break;
-
             case 3:
                 pistolaGlock.ActualizarMunicion();
                 break;
-
-            default:
             case 0:
+            default:
                 cuchillo.ActualizarMunicion();
                 break;
         }
@@ -196,13 +183,11 @@ public class PlayerMovement : MonoBehaviour
         {
             gameManager.GetComponent<GameManagerScript>().JugadorMuerto();
         }
-
     }
 
-    public void RespawnPlayer() {
-        //Hace TP al punto de respawn
+    public void RespawnPlayer()
+    {
         gameObject.transform.position = puntoRespawn.position;
-
         vida = 100;
     }
 }
