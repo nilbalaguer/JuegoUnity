@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/PantallaInicio.unity
     guid: 3e5bd29a63bd849419b17024d1c318d0
   - enabled: 1
-    path: Assets/Scenes/Nivel1_Nil.unity
-    guid: 38fe199f0cc31cf4996b8a0300e8ab22
+    path: Assets/Scenes/Nivel1_Final.unity
+    guid: aeec6a49039b77142a459195c8dcb8cb
   - enabled: 1
-    path: Assets/Scenes/NIVELANIOL_Prueba.unity
-    guid: acfc7261f498d3649a5fffaabd427d0c
+    path: Assets/Scenes/Nivel1_Final_Piso2.unity
+    guid: 7f5f1b4303d862e4aa67b35150ed1ed6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

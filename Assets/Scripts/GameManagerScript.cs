@@ -55,6 +55,7 @@ public class GameManagerScript : MonoBehaviour
         Time.timeScale = 0f;
 
         GameController.Instance.BorrarPuntuacion();
+        GameController.Instance.armaSeleccionada = -1;
 
         audioSource.PlayOneShot(wastedSound);
     }
@@ -62,6 +63,7 @@ public class GameManagerScript : MonoBehaviour
     public void Reintentar()
     {
         GameController.Instance.BorrarPuntuacion();
+        GameController.Instance.armaSeleccionada = -1;
 
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

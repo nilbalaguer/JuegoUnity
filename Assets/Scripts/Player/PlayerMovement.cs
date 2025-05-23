@@ -39,6 +39,14 @@ public class PlayerMovement : MonoBehaviour
 
         //Poner puntos a 0
         puntosNivel = 0;
+
+        int armaController = GameController.Instance.armaSeleccionada;
+        if (armaController != -1)
+        {
+            armaSeleccionada = armaController;
+        }
+
+        GameObject.Find("ArmaSeleccionada").GetComponent<UnityEngine.UI.Image>().sprite = ArmasEnHud[armaSeleccionada];
     }
 
     void Update()
@@ -142,6 +150,8 @@ public class PlayerMovement : MonoBehaviour
         GameObject.Find("ArmaSeleccionada").GetComponent<UnityEngine.UI.Image>().sprite = ArmasEnHud[armaSeleccionada];
 
         armasuelo.ActualizarSprite();
+
+        GameController.Instance.armaSeleccionada = armaSeleccionada;
 
         // Activar o desactivar colisión del cuchillo según el arma equipada
         cuchilloColision.enabled = (armaSeleccionada == 0);
