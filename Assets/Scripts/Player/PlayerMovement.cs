@@ -27,8 +27,14 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Sprite[] ArmasEnHud;
 
+    [SerializeField] Sprite[] SpritesJugador;
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         escopeta = GetComponentInChildren<EscopetaScript>();
         cuchillo = GetComponentInChildren<CuchilloScript>();
         carabinaM4 = GetComponentInChildren<CarbinaM4Script>();
@@ -160,19 +166,23 @@ public class PlayerMovement : MonoBehaviour
         {
             case 1:
                 escopeta.ActualizarMunicion();
+                spriteRenderer.sprite = SpritesJugador[armaSeleccionada];
                 break;
 
             case 2:
                 carabinaM4.ActualizarMunicion();
+                spriteRenderer.sprite = SpritesJugador[armaSeleccionada];
                 break;
 
             case 3:
                 pistolaGlock.ActualizarMunicion();
+                spriteRenderer.sprite = SpritesJugador[armaSeleccionada];
                 break;
 
             default:
             case 0:
                 cuchillo.ActualizarMunicion();
+                spriteRenderer.sprite = SpritesJugador[armaSeleccionada];
                 break;
         }
     }
