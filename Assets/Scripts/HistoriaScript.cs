@@ -1,12 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class HistoriaScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        try
+        {
 
+            GameObject.Find("Puntuacion").GetComponent<TextMeshProUGUI>().text = GameController.Instance.puntuacionJuego + " pts totales";
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("No se encontro puntuacion");
+        }
     }
 
     // Update is called once per frame
@@ -17,7 +26,7 @@ public class HistoriaScript : MonoBehaviour
             Jugar();
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             SceneManager.LoadScene("PantallaInicio");
         }

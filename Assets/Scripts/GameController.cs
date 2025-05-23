@@ -4,7 +4,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static GameController Instance;
-    private int puntuacionJuego;
+    public int puntuacionJuego;
     public int armaSeleccionada = -1;
 
     private float tiempoParaContarEnemigos = -1f;
