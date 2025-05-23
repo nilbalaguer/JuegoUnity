@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel1_Final_Piso2.unity
     guid: 7f5f1b4303d862e4aa67b35150ed1ed6
+  - enabled: 1
+    path: Assets/Scenes/Introduccion.unity
+    guid: c9a7ad9fe98d59046a8d6b0c931342f4
+  - enabled: 1
+    path: Assets/Scenes/FinalHistoria.unity
+    guid: 946d3442e56e90f479883c991ada66cf
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
