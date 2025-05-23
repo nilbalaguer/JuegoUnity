@@ -49,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         GameObject.Find("ArmaSeleccionada").GetComponent<UnityEngine.UI.Image>().sprite = ArmasEnHud[armaSeleccionada];
+
+        ActualizarSpriteArmaPlayer();
     }
 
     void Update()
@@ -85,7 +87,8 @@ public class PlayerMovement : MonoBehaviour
             armaCercana = null;
         }
 
-        if (Input.GetKeyDown("escape")) {
+        if (Input.GetKeyDown("escape"))
+        {
             gameManager.GetComponent<GameManagerScript>().MenuPausa();
         }
     }
@@ -202,5 +205,29 @@ public class PlayerMovement : MonoBehaviour
     {
         gameObject.transform.position = puntoRespawn.position;
         vida = 100;
+    }
+
+    public void ActualizarSpriteArmaPlayer()
+    {
+        switch (armaSeleccionada)
+        {
+            case 1:
+                escopeta.ActualizarMunicion();
+                spriteRenderer.sprite = SpritesJugador[armaSeleccionada];
+                break;
+            case 2:
+                carabinaM4.ActualizarMunicion();
+                spriteRenderer.sprite = SpritesJugador[armaSeleccionada];
+                break;
+            case 3:
+                pistolaGlock.ActualizarMunicion();
+                spriteRenderer.sprite = SpritesJugador[armaSeleccionada];
+                break;
+            case 0:
+            default:
+                cuchillo.ActualizarMunicion();
+                spriteRenderer.sprite = SpritesJugador[armaSeleccionada];
+                break;
+        }
     }
 }
