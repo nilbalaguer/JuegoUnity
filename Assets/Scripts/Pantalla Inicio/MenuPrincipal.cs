@@ -13,7 +13,7 @@ public class MenuPrincipal : MonoBehaviour
     public void Jugar(){
         //SceneManager.LoadScene("NIVELANIOL_prueba");
         //SceneManager.LoadScene("NIVELANIOL");
-        SceneManager.LoadScene("Nivel1_Final");
+        SceneManager.LoadScene("Introduccion");
     }
     public void Controles(){
         Debug.Log("Controles");
