@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public int armaSeleccionada;
     private ArmaSueloScript armaCercana = null;
     public Animator animator;
+
     public int puntosNivel;
 
     [SerializeField] Transform puntoRespawn;
@@ -34,8 +35,9 @@ public class PlayerMovement : MonoBehaviour
         carabinaM4 = GetComponentInChildren<CarbinaM4Script>();
         pistolaGlock = GetComponentInChildren<PistolaGlockScript>();
 
-        // ⚠️ Obtener Animator desde el objeto hijo "Legs"
+        //Obtener Animator desde el objeto hijo "Legs"
         animator = transform.Find("Legs").GetComponent<Animator>();
+
 
         armaSeleccionada = 0;
         puntosNivel = 0;
@@ -51,6 +53,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+
+        bool estaMoviendose = (x != 0 || y != 0);
+        animator.SetBool("isMoving", estaMoviendose);
+
         if (Time.timeScale > 0)
         {
             switch (armaSeleccionada)
@@ -70,11 +78,6 @@ public class PlayerMovement : MonoBehaviour
                     break;
             }
         }
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-
-        bool estaMoviendose = (x != 0 || y != 0);
-        animator.SetBool("isMoving", estaMoviendose);
 
         if (armaCercana != null && Input.GetButtonDown("Fire2"))
         {
